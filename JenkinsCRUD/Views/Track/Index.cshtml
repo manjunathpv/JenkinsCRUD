@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JenkinsCRUD.Models.Album>
+﻿@model IEnumerable<JenkinsCRUD.Models.Track>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArtistName)
+                @Html.DisplayNameFor(model => model.Artist)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -37,10 +37,10 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ArtistName)
+                @Html.DisplayFor(modelItem => item.Artist)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JenkinsCRUD.Controllers
 {
-    public class AlbumController : Controller
+    public class TrackController : Controller
     {
         // GET: Album
         public IActionResult Index()
