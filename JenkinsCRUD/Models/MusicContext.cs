@@ -20,25 +20,25 @@ namespace JenkinsCRUD.Models
             return new MySqlConnection(ConnectionString);
         }
 
-        public List<Album> GetAllAlbums()
+        public List<Track> GetAllAlbums()
         {
-            List<Album> list = new List<Album>();
+            List<Track> list = new List<Track>();
 
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Album where id < 10", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from Track where id < 10", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new Album()
+                        list.Add(new Track()
                         {
                             Id = Convert.ToInt32(reader["Id"]),
-                            Name = reader["Name"].ToString(),
-                            ArtistName = reader["ArtistName"].ToString(),
-                            Price = Convert.ToInt32(reader["Price"]),
+                            Title = reader["Name"].ToString(),
+                            Artist = reader["ArtistName"].ToString(),
+                            Price = reader["Price"].ToString(),
                             Genre = reader["genre"].ToString()
                         });
                     }

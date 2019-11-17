@@ -39,6 +39,8 @@ namespace JenkinsCRUD.Controllers
             try
             {
                 // TODO: Add insert logic here
+                MusicContext context = HttpContext.RequestServices.GetService(typeof(JenkinsCRUD.Models.MusicContext))
+               as MusicContext;
 
                 return RedirectToAction(nameof(Index));
             }
